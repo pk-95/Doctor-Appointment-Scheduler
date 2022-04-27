@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Welcome!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="my-login.css">
+</head>
+
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="sign.jpg" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Welcome to our Management System. Please choose an option:</h4>
+						</div>
+						<div>
+							<a th:href="@{/patlog}" class="btn btn-primary">Patient</a>
+							<a th:href="@{/doclog}" class="btn btn-primary">Doctor</a>
+						</div>
+					</div>
+					<div class="footer">
+						OOAD MiniProject - Hospital Management System
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

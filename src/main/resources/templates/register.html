@@ -16,7 +16,7 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Register</h4>
+							<h4 class="card-title">Patient Registeration</h4>
 							<form th:action="@{/registered}" method="POST" class="my-login-validation" novalidate="">
 
 								<div class="form-group">
@@ -35,15 +35,6 @@
 									</div>
 								</div>
 
-								<div class="form-group">
-									<div class="custom-checkbox custom-control">
-										<input type="checkbox" name="agree" id="agree" class="custom-control-input" required="">
-										<label for="agree" class="custom-control-label">I agree to the <a href="#">Terms and Conditions</a></label>
-										<div class="invalid-feedback">
-											You must agree with our Terms and Conditions
-										</div>
-									</div>
-								</div>
 
 								<div class="form-group m-0">
 									<button type="submit" class="btn btn-primary btn-block">
@@ -51,14 +42,13 @@
 									</button>
 								</div>
 								<div class="mt-4 text-center">
-									Already have an account? <a th:href="@{/}">Login</a>
+									Already have an account? <a th:href="@{/patlog}">Login</a>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2020 &mdash; Doctor's Appointment
-					</div>
+						OOAD MiniProject - Hospital Management System					</div>
 				</div>
 			</div>
 		</div>

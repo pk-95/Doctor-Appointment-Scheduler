@@ -47,6 +47,11 @@ public class ControllerClass {
 
 	@GetMapping("/")
 	public String home() {
+		return "start";
+	}
+
+	@GetMapping("/patlog")
+	public String patlog() {
 		return "index";
 	}
 
@@ -67,6 +72,11 @@ public class ControllerClass {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/fail_login")
+	public String fail_login() {
+		return "fail_login";
+	}
+
 	@PostMapping("/authenticate")
 	public String authenticate(Person person,HttpSession session) {
 		if(personRepo.existsById(person.getEmail()) && personRepo.findById(person.getEmail()).get().getPassword().equals(person.getPassword())) {

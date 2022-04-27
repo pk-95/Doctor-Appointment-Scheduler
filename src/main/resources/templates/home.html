@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor's Appointment</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<header id="home">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="font-family: 'Poppins', sans-serif;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand text-capitalize" href="#">
+      <img src="sign.jpg" width="40" height="40" alt="" loading="lazy" class="mr-2">
+      Doctor's Appointment</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home"> <i class="fa fa-home mr-1" aria-hidden="true"></i>Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/userdetails}"><i class="fa fa-hospital-o mr-1" aria-hidden="true"></i>My Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/docdetails}"> <i class="fa fa-medkit mr-1" aria-hidden="true"></i>Doctors</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ 
+  <div class="post-container">                
+    <div class="post-thumb"><img src="doc.png" alt ="img1" width= "700" height="610"/></div>
+    <div class="post-content">
+        <h4 class="post-title" th:text="'Welcome '+${email}"></h4>
+        <p class="post-para">We are there for you. If you are feeling unwell, then you need a check-up. Book an appointment with an appropriate doctor here.</p>
+   </div>
+
+</header>
+</body>
+</html>

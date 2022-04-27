@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body >
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top "style="font-family: 'Poppins', sans-serif;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-capitalize" href="#"><img src="sign.jpg" width="40" height="40" alt="logo" loading="lazy" class="mr-2">Doctor's Appointment</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+           <li class="nav-item">
+          <a class="nav-link" th:href="@{/home}"> <i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" th:href="@{/userdetails}"> <i class="fa fa-medkit mr-1" aria-hidden="true"></i>Appointments</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link" th:href="@{/}"> <i class="fa fa-medkit mr-1" aria-hidden="true"></i>Logout</a>
+        </li>
+          </ul>
+        </div>
+      </nav>
+   </header> 
+   <section class="container.fluid pt-3">
+    <table class="table-bordered table-striped table-condensed cf" style="width:100%; margin-top:2px; font-size:14px;">
+<thead class="cf" style="width:100%"> <tr> <th style="background-color:#1DA1F2; color:#FFF;"><strong>Id of Doctor</strong></th> <th style="background-color:#1DA1F2; color:#FFF;"><strong>Name</strong></th> <th style="background-color:#1DA1F2; color:#FFF;"><strong>Specialization</strong></th> <th style="background-color:#1DA1F2; color:#FFF;"><strong>Degree</strong></th> <th style="background-color:#1DA1F2; color:#FFF;"><strong>State</strong></th> <th style="background-color:#1DA1F2; color:#FFF;"><strong>City</strong></th> </tr> </thead>
+<tbody>
+
+<tr valign="top" th:each="doctor:${doctor}">
+<form method="POST" th:action="@{/assignment}">
+<td valign="top" th:text="${doctor.Id}"type="text">Id</td>
+<td valign="top" th:text="${doctor.name}">Name</td>
+<td valign="top" th:text="${doctor.specialization}">Specialization</td>
+<td valign="top" th:text="${doctor.degree}">Degree</td>
+<td valign="top" th:text="${doctor.state}">State</td>
+<td valign="top" th:text="${doctor.city}">City</td>
+<td>
+
+	<input type="hidden" name="email" th:value="${email}">
+	
+	<input type="hidden" name="docId" th:value="${doctor.Id}">
+	<input type="hidden" name="docName" th:value="${doctor.name}">
+	<input type="hidden" name="docSpecial" th:value="${doctor.specialization}">
+	<input type="date" id="calender" name="date">
+    <button type="submit" value="value" class="link-button">Book Appointment</button>
+</td>
+</form>
+</tr>
+
+</tbody>
+</table>
+   </section>
+   <footer>
+   </footer>
+
+</body>
+</html>

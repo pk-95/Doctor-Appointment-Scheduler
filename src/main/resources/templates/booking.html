@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="font-family: 'Poppins', sans-serif;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-capitalize" href="#">
+            <img src="../img/sign.jpg" width="40" height="40" alt="logo" loading="lazy" class="mr-2">
+             Doctor's Appointment</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html"><i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="appointed.html"><i class="fa fa-hospital-o mr-1" aria-hidden="true"></i>My Appointments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctors.html"><i class="fa fa-medkit mr-1" aria-hidden="true"></i>Doctors</a>
+            </li>
+             <li class="nav-item active">
+              <a class="nav-link" href="booking.html"><i class="fa fa-user mr-1" aria-hidden="true"></i>Book Appointment<span class="sr-only">(current)</span></a>
+            </li>
+            <button type="button" class="btn btn-warning ml-4">
+                <i class="fa fa-sign-out"></i>Logout</button>
+          </ul>
+        </div>
+      </nav>
+   </header> 
+   <section>
+    
+    <div class="container">
+    <div class="row flex-lg-nowrap">
+      <div class="col">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{Name}, book your appointment here.</h4>
+                        <p class="mb-0">{Email ID}</p>
+                        <div class="mt-2"></div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item"><a href="" class="active nav-link">BOOK AN APPOINTMENT</a></li>
+                  </ul>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate="">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Full Name</label>
+                                  <input id="fName" class="form-control" type="text" name="name" placeholder="Full Name">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Phone No.</label>
+                                  <input class="form-control" type="text" name="Phone" id="Phone" placeholder="Phone number">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Email</label>
+                                  <input id="Email" class="form-control" type="text" placeholder="user@example.com">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Doctor ID</label>
+                                  <input class="form-control" type="text" name="Doctor ID" id="docid" placeholder="Doctor ID"/>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Doctor Name</label>
+                                  <input class="form-control" type="text" name="Doctor Name" id="docname" placeholder="Doctor Name">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Appointment Date</label>
+                                  <input class="form-control" type="date" name="Appointment Date" id="date" placeholder="Appointment Date"/>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Appointment Time</label>
+                                  <input class="form-control" type="time" name="Appointment Time" id="time" placeholder="Appointment Time">
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col mb-3">
+                                <div class="form-group">
+                                  <label>Symptoms</label>
+                                  <textarea class="form-control" rows="5" placeholder="Description about your symptoms"></textarea>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Confirm Appointment</button>
+                          </div>
+                        </div>
+                      </form>
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   </section>
+</body>
+</html>

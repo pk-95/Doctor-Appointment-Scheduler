@@ -1,0 +1,23 @@
+body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.post-container {
+  margin: 20px 20px 20px 20px;  
+  overflow: auto
+}
+.post-thumb {
+  float: left
+}
+
+.post-content {
+  margin-left: 800px;
+  margin-top: 150px
+}
+.post-title {
+  font-weight: bold;
+  font-size: 300%
+}
+.post-para {
+  font-size: 175%
+}

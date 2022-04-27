@@ -49,6 +49,11 @@ public class ControllerClass {
 	public String home() {
 		return "index";
 	}
+
+	@GetMapping("/doclog")
+	public String doclog() {
+		return "doclog";
+	}
 	
 	@PostMapping("/registered")
 	public String registered(Person person) {
@@ -57,7 +62,7 @@ public class ControllerClass {
 	}
 
 	@PostMapping("/registereddoc")
-	public String registered(Doctor doctor) {
+	public String registereddoc(Doctor doctor) {
 		docRepo.save(doctor);
 		return "redirect:/";
 	}
@@ -67,6 +72,15 @@ public class ControllerClass {
 		if(personRepo.existsById(person.getEmail()) && personRepo.findById(person.getEmail()).get().getPassword().equals(person.getPassword())) {
 			session.setAttribute("person", person.getEmail());
 			return "redirect:/home";
+			}
+		return "redirect:/fail_login";
+	}
+
+	@PostMapping("/authenticatedoc")
+	public String authenticatedoc(Doctor doctor,HttpSession session) {
+		if(docRepo.existsById(doctor.getEmail()) && docRepo.findById(doctor.getEmail()).get().getPassword().equals(doctor.getPassword())) {
+			session.setAttribute("doctor", doctor.getEmail());
+			return "redirect:/patientlist";
 			}
 		return "redirect:/fail_login";
 	}
@@ -94,6 +108,8 @@ public class ControllerClass {
 		
 		
 	}
+
+
 	
 	@PostMapping("/assignment")
 	public String submitted(Appointment app) {
@@ -127,6 +143,18 @@ public class ControllerClass {
 		
 		params.put("appointments", apps);
 		params.put("email", session.getAttribute("person"));
+		
+		return new ModelAndView("appointed",params);
+		
+		
+	}
+	@GetMapping("/patientlist")
+	public ModelAndView PatientList(HttpSession session) {
+		List<Appointment> apps = appRepo.findByDocId(session.getAttribute("doctor").toString());
+		Map<String,Object> params = new HashMap<>();
+		
+		params.put("appointments", apps);
+		params.put("email", session.getAttribute("doctor"));
 		
 		return new ModelAndView("appointed",params);
 		

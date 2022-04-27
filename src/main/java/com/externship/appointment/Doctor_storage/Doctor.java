@@ -3,6 +3,8 @@ package com.externship.appointment.Doctor_storage;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 import org.springframework.stereotype.Component;
 
@@ -11,19 +13,30 @@ import org.springframework.stereotype.Component;
 @Table(name="DOCTOR")
 public class Doctor {
 	@Id
-	private Long id;
+	private String email;
 	private String name;
 	private String specialization;
 	private String degree;
 	private String state;
 	private String city;
 	
-	public Long getId() {
-		return id;
+	private String password;
+	
+
+
+	public String getEmail() {
+		return email;
 	}
-	public void setId(Long id) {
-		this.id=id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	public String getName() {
 		return name;
 	}

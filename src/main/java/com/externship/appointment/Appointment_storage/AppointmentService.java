@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppointmentService implements CustomRepository{
+public class AppointmentService implements CustomRepository,CustomTwo{
 	@Autowired
 	private JdbcTemplate jtm;
 	
@@ -17,4 +17,8 @@ public class AppointmentService implements CustomRepository{
 		return jtm.query(sql, new BeanPropertyRowMapper<>(Appointment.class));
 	}
 	
+	public List<Appointment> findByDocId(String DocId) {
+		String sql="select * from Appointment where DocId="+DocId;
+		return jtm.query(sql, new BeanPropertyRowMapper<>(Appointment.class));
+	}
 }

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 public class Appointment {
 	@Id
 	private String appId;
-	
 	private String email;
 	private String docId;
 	private String docName;

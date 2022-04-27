@@ -156,7 +156,7 @@ public class ControllerClass {
 		params.put("appointments", apps);
 		params.put("email", session.getAttribute("doctor"));
 		
-		return new ModelAndView("appointed",params);
+		return new ModelAndView("appointedDoc",params);
 		
 		
 	}
